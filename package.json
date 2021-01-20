@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace many-to-many-facilitation-code-client build",
+    "dev": "yarn workspace many-to-many-facilitation-code-server dev",
+    "dev:debug": "yarn workspace many-to-many-facilitation-code-server dev:debug",
+    "heroku-postbuild": "yarn workspace many-to-many-facilitation-code-client build",
+    "start": "yarn workspace many-to-many-facilitation-code-server start",
+    "dev:cypress": "yarn workspace many-to-many-facilitation-code-server dev:e2e",
+    "e2e:open": "yarn workspace many-to-many-facilitation-code-e2e e2e:open",
+    "e2e:run": "yarn workspace many-to-many-facilitation-code-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^14.15"
+  }
+}
