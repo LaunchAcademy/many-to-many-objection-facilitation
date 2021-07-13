@@ -1,6 +1,6 @@
 import express from "express"
 
-import { Author } from "../../../models/index.js"
+import { Author, Book } from "../../../models/index.js"
 
 const authorsRouter = new express.Router()
 
@@ -20,6 +20,14 @@ authorsRouter.get("/:id", async (req, res) => {
   try {
     const author = await Author.query().findById(id)
     author.books = await author.$relatedQuery("books")
+
+    // const authorships = await Authorships.query().where({authorId: author.id})
+
+    // const books = authorships.map((authorship) => {
+    //   return await Book.query().findById(authorship.bookId)
+    // })
+
+
     return res.status(200).json({ author })
   } catch(error){
     return res.status(500).json({ errors: error })

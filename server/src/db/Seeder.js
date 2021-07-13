@@ -10,6 +10,9 @@ class Seeder {
     const fifthSeason = await Book.query().insertAndFetch({name: "The Fifth Season"})
     const rails = await Book.query().insertAndFetch({name: "The Rails 4 Way"})
 
+    // const author1 = await Author.query.insertAndFetch({name: "Andy Weir"})
+    // const authorship1 = await Authorship.query().insertAndFetch({authorId: author1.id, bookId: martian.id })
+
     await martian.$relatedQuery("authors").insert({ name: "Andy Weir"})
     await kingdoms.$relatedQuery("authors").insert({ name: "N.K. Jemisin"})
     await rails.$relatedQuery("authors").insert({ name: "Obie Fernandez"})
