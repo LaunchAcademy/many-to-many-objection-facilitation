@@ -5,7 +5,7 @@ class Book extends Model {
     return "books"
   }
 
-  static get relationMappings(){
+  static get relationMappings() {
     const { Author, Authorship } = require("./index.js")
 
     return {

@@ -12,7 +12,7 @@ class Seeder {
     const rails = await Book.query().insertAndFetch({ name: "The Rails 4 Way" });
 
     // // Create individual Author
-    const author1 = await Author.query.insertAndFetch({ name: "Andy Weir"})
+    const author1 = await Author.query().insertAndFetch({ name: "Andy Weir"})
     // // Create association between Book and Author (with id's)
     const authorship1 = await Authorship.query().insertAndFetch({ authorId: author1.id, bookId: martian.id })
 

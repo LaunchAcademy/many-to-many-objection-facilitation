@@ -21,7 +21,7 @@ authorsRouter.get("/:id", async (req, res) => {
     const author = await Author.query().findById(id)
     author.books = await author.$relatedQuery("books")
 
-    // const authorships = await Authorships.query().where({authorId: author.id})
+    // const authorships = await Authorship.query().where({authorId: author.id})
 
     // const books = authorships.map((authorship) => {
     //   return await Book.query().findById(authorship.bookId)
