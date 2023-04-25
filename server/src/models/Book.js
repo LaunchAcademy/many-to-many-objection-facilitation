@@ -26,7 +26,7 @@ class Book extends Model {
             from: "authorships.bookId",
             to: "authorships.authorId"
           },
-          to: "authors.id"
+          to: "authors.id" 
         }
       }
     }

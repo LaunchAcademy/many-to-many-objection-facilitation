@@ -8,12 +8,7 @@
 exports.up = async (knex) => {
   return knex.schema.createTable("authorships", (table) => {
     table.bigIncrements("id")
-    table
-      .bigInteger("bookId")
-      .unsigned()
-      .notNullable()
-      .index()
-      .references("books.id")
+    table.bigInteger("bookId").unsigned().notNullable().index().references("books.id")
     table
       .bigInteger("authorId")
       .unsigned()

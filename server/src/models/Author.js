@@ -19,14 +19,14 @@ class Author extends Model {
       },
       books: {
         relation: Model.ManyToManyRelation,
-        modelClass: Book,
+        modelClass: Book, 
         join: {
           from: "authors.id",
           through: {
             from: "authorships.authorId",
             to: "authorships.bookId"
           },
-          to: "books.id"
+          to: "books.id" 
         }
       }
     }

@@ -1,4 +1,4 @@
-
+## Many to Many Book App
 
 ```
 yarn install 
@@ -8,3 +8,4 @@ cd server
 yarn migrate:latest
 yarn db:seed
 ```
+

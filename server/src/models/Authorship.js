@@ -10,16 +10,16 @@ class Authorship extends Model {
 
     return {
       book: {
-        relation: Model.BelongsToOneRelation,
         modelClass: Book,
         join: {
-          from: "authorships.bookId",
-          to: "books.id"
-        }
+          to: "books.id",
+          from: "authorships.bookId"
+        },
+        relation: Model.BelongsToOneRelation
       },
       author: {
+        modelClass: Author, 
         relation: Model.BelongsToOneRelation,
-        modelClass: Author,
         join: {
           from: "authorships.authorId",
           to: "authors.id"
