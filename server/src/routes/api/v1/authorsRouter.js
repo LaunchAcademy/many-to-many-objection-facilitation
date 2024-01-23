@@ -2,7 +2,7 @@ import express from "express"
 
 import { Author, Book } from "../../../models/index.js"
 
-const authorsRouter = new express.Router()
+const authorsRouter = express.Router()
 
 authorsRouter.get("/", async (req, res) => {
   try {
@@ -30,6 +30,7 @@ authorsRouter.get("/:id", async (req, res) => {
 
     return res.status(200).json({ author })
   } catch(error){
+    console.log(error)
     return res.status(500).json({ errors: error })
   }
 })
