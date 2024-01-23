@@ -44,6 +44,16 @@ class Book extends Model {
       },
     };
   }
+
+  static get jsonSchema() {
+    return {
+      type: "object",
+      required: ["name"],
+      properties: {
+        name: { type: "string" },
+      },
+    };
+  }
 }
 
 module.exports = Book;

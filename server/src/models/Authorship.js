@@ -13,8 +13,8 @@ class Authorship extends Model {
     // an authorship belongs to one author
     return {
       author: {
-        relation: Model.BelongsToOneRelation,
         modelClass: Author,
+        relation: Model.BelongsToOneRelation,
         join: {
           from: "authorships.authorId",
           to: "authors.id",
